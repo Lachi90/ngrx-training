@@ -8,7 +8,9 @@
 </pre>
 # Purpose
 This repository contains a simple example on how to use `ngrx` in Angular.</br>
-As example is a list of books, which are retrieved from an API and can be added to a collection, and removed as well.
+As example is a list of books, which are retrieved from an API and can be added to a collection, and removed as well.</br>
+Described below is a summary of my findings from different sources, which lead to the example app. 
+If you want a more detailed guide, look ath the [Setup by step tutorial](#step-by-step-tutorial).
 
 # Sources
 https://ngrx.io/</br>
