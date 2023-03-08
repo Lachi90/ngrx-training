@@ -10,14 +10,14 @@
 This repository contains a simple example on how to use `ngrx` in Angular.</br>
 As example is a list of books, which are retrieved from an API and can be added to a collection, and removed as well.</br>
 Described below is a summary of my findings from different sources, which lead to the example app. 
-If you want a more detailed guide, look ath the [Setup by step tutorial](#step-by-step-tutorial).
+If you want a more detailed guide, look ath the [Step-by-step tutorial](#step-by-step-tutorial).
 
 # Sources
 https://ngrx.io/</br>
 https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-redux/</br>
 https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 
-# Step by step tutorial
+# Step-by-step tutorial
 TODO
 
 # Run
