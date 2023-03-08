@@ -19,4 +19,13 @@ https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 - @ngrx/store@14.0.2
 - @ngrx/effects@14.0.2
 
+### Actions
+- Course Action
+
+### Reducer
+- Course Reducer
+
+### Selector
+
+### Components
 
