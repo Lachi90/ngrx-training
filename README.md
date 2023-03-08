@@ -37,5 +37,8 @@ https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 ## Selector
 - Book Selector
 
+## Services
+- Books Service
+
 ## Components
 
