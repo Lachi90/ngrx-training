@@ -64,10 +64,10 @@
                                 book.service.ts
                             </button>
                         </div>
-                    
                         <div id="bookServiceCode" class="collapse show" aria-labelledby="headingBookService" data-parent="#bookServiceAccordion">
-                            <pre>
-                                <code>
+                            <div class="card-body">
+                                <pre>
+                                    <code>
     import { HttpClient } from '@angular/common/http';
     import { Injectable } from '@angular/core';
 
@@ -87,8 +87,9 @@
             .pipe(map((books) => books.items || []));
         }
     }
-                                </code>
-                            </pre>                        
+                                    </code>
+                                </pre>    
+                            </div>                    
                         </div>
                     </div>
                 </div>
