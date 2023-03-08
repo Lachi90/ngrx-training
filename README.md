@@ -41,4 +41,5 @@ https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 - Books Service
 
 ## Components
+- BookList Component
 
