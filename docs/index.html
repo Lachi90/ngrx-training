@@ -14,22 +14,84 @@
         </div>
         <div class="row mb-3">
             <h2>Setup project</h2>
-            <code class="border border-dark-primary rounded mb-1">
-                ng new ngrx-training
-            </code>
-            <h5>Answer the presented questions as follows: </h5>
-            <p><i>Would you like to add Angular routing:</i> yes </p>
-            <p><i>Which stylesheet format would you like to use:</i> CSS</p>
+            <div class="border border-success rounded mb-1">
+                <p><b>To create a new Angular project, run the following command:</b></p>
+                <kbd>ng new ngrx-training</kbd>
+                <p class="mt-3"><b>Answer the presented questions as follows: </b></p>
+                <p><i>Would you like to add Angular routing:</i> yes </p>
+                <p><i>Which stylesheet format would you like to use:</i> CSS</p>
+            </div>
         </div>
-        <div class="row mb-5">
+        <div class="row mb-3">
             <h2>Create folder structure</h2>
-            <div class="border border-dark-primary rounded mb-1">
+            <div class="border border-success rounded mb-1">
                 <ul>
                     <li><p>Create a folder called <code>store</code> in <code>src/app/</code></p></li>
-                    <li><p>In the <code>store</code> folder create the following folders: <br>
+                    <li><p>In the <code>store</code> folder create the following subfolders: <br>
                         <code>actions</code>, <code>models</code>, <code>reducers</code>, <code>selectors</code><br>
                         We are going to fill these folders in later steps.</p></li>
+                    <li><p>Create a folder called <code>services</code> in <code>src/app/</code></p></li>
+                    <li><p>Create a folder called <code>components</code> in <code>src/app/</code></p></li>
+                    <li><p>In the <code>components</code> folder create the following subfolders: <br>
+                        <code>book-collection</code>, <code>book-list</code><br>
+                        We are going to fill these folders in later steps.</p></li>
                 </ul>
+                After that your folder structure should look like this:
+                <pre>
+                    src
+                    ├───app
+                        ├───components
+                        │   ├───book-collection
+                        │   └───book-list
+                        ├───services
+                        └───store
+                            ├───actions
+                            ├───models
+                            ├───reducers
+                            └───selectors
+                </pre>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <h2>Create books service</h2>
+            <div class="border border-success rounded mb-1">
+                <p>Create the <code>books.service.ts</code> file in the <code>services</code> folder.</p>
+                <p>Add the following content:</p>
+                <div class="accordion" id="bookServiceAccordion">
+                    <div class="card">
+                        <div class="card-header" id="headingBookService">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#bookServiceCode" aria-expanded="true" aria-controls="bookServiceCode">
+                                book.service.ts
+                            </button>
+                        </div>
+                    
+                        <div id="bookServiceCode" class="collapse show" aria-labelledby="headingBookService" data-parent="#bookServiceAccordion">
+                            <pre>
+                                <code>
+    import { HttpClient } from '@angular/common/http';
+    import { Injectable } from '@angular/core';
+
+    import { Observable } from 'rxjs';
+    import { map } from 'rxjs/operators';
+    import { Book } from '../store/models/books.model';
+
+    @Injectable({ providedIn: 'root' })
+    export class GoogleBooksService {
+        constructor(private http: HttpClient) {}
+
+        getBooks(): Observable<Array<Book>> {
+            return this.http
+            .get<{ items: Book[] }>(
+                'https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=oliver%20sacks'
+            )
+            .pipe(map((books) => books.items || []));
+        }
+    }
+                                </code>
+                            </pre>                        
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
