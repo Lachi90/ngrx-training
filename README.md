@@ -55,6 +55,7 @@ The `books.actions.ts` defines two [action groups](#action-group). The first for
 `source` is the group name.</br>
 `events` represents a list of actions. The key is the action name.</br>
 The `props` method is used to define any additional metadata needed for the handling of the action.
+More info see: [Actions](https://ngrx.io/guide/store/actions)
 
 ## Reducer
 - Book Reducer
@@ -63,6 +64,7 @@ The `props` method is used to define any additional metadata needed for the hand
 ### Reducers explained
 The two reducers work by the same principle. The `createReducer` function retrieves the initial [state](#store-and-state) as there first parameter. 
 Every other parameter are action handlers, they are represented by the `on` function. As first paramter the action name is passed (which is part of the actions ts file). The second paramater handles the state transition. 
+More info see: [Reducers](https://ngrx.io/guide/store/reducers)
 
 ## Selector
 ### Book Selector
