@@ -18,7 +18,7 @@ https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-r
 https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 
 # Step-by-step tutorial
-TODO
+<a href="https://lachi90.github.io/ngrx-training/" target="_blank">Step-by-step tutorial</a>
 
 # Run
 ## Live Demo
