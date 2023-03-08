@@ -80,7 +80,8 @@ The BookList a component which displays the books which were retrieved from the 
 The BookCollection is a component which displays the books, which were added to the collection by the BookList component. Also provides functionality to remove books from the collection. 
 
 ### App Component
-
+The App component holds the BookList and BookCollection component. It is responsible to call the service to fetch the book data and also for triggering state changes, when books are added or removed from the collection.</br>
+By calling `this.store.dispach()` the respective reducer gets triggered, which then executes the state transition.
 
 # Glossary
 ## Action Group
