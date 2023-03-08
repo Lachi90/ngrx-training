@@ -1,6 +1,8 @@
 # ngrx-training
 ## Sources
-https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-redux/
+https://ngrx.io/</br>
+https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-redux/</br>
+https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 
 ## First time use
 `npm install`
@@ -8,7 +10,13 @@ https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-r
 ## Run application
 `ng serve`
 
+## Know How
+### State Management Lifecycle
+<img src="./readme/ngrx-state-management-lifecycle.drawio.png">
+
 ## Development steps
 ### Packages added
 - @ngrx/store@14.0.2
 - @ngrx/effects@14.0.2
+
+
