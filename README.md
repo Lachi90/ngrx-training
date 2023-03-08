@@ -22,7 +22,7 @@ https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 ## State Management Lifecycle
 <img src="./readme/ngrx-state-management-lifecycle.drawio.png">
 
-# Development steps
+# Development Parts
 ## Packages added
 - @ngrx/store@14.0.2
 - @ngrx/effects@14.0.2
@@ -35,6 +35,7 @@ https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 - Collection Reducer
 
 ## Selector
+- Book Selector
 
 ## Components
 
