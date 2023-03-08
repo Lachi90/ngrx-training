@@ -9,10 +9,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { booksReducer } from './store/reducers/books.reducer';
 import { collectionReducer } from './store/reducers/collection.reducer';
+import { BookCollectionComponent } from './components/book-collection/book-collection.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookCollectionComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   class="book-item"
   *ngFor="let book of books"
 >
-  <p>{{book.volumeInfo.title}}</p><span> by {{book.volumeInfo.authors}}</span>
+  <p>{{book.volumeInfo.title}}</p><span> by {{book.volumeInfo.authors}}</span><br>
   <button
     (click)="add.emit(book.id)"
     data-test="add-button"
