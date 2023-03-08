@@ -6,10 +6,17 @@
  | |\  | |__| | | \ \  / . \     | |  | | \ \  / ____ \ _| |_| |\  |_| |_| |\  | |__| |
  |_| \_|\_____|_|  \_\/_/ \_\    |_|  |_|  \_\/_/    \_\_____|_| \_|_____|_| \_|\_____|
 </pre>
+# Purpose
+This repository contains a simple example on how to use `ngrx` in Angular.</br>
+As example is a list of books, which are retrieved from an API and can be added to a collection, and removed as well.
+
 # Sources
 https://ngrx.io/</br>
 https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-redux/</br>
 https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
+
+# Step by step tutorial
+TODO
 
 # Run
 ## Live Demo
@@ -34,7 +41,7 @@ https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 > Reducers are responsible to transition the state from one to the next. Reducers have functions which are trigger on base of the action's type.
 
 ### Selectors
-> Selectors are pure functions used for obtaining slices of store state.
+> Selectors are pure functions used for obtaining slices of the store state.
 
 # Development Parts
 ## Packages added
@@ -52,20 +59,32 @@ The `props` method is used to define any additional metadata needed for the hand
 - Collection Reducer
 
 ### Reducers explained
-The two reducers work by the same principle. The `createReducer` function retrieves the initial state as there first parameter. 
+The two reducers work by the same principle. The `createReducer` function retrieves the initial [state](#store-and-state) as there first parameter. 
 Every other parameter are action handlers, they are represented by the `on` function. As first paramter the action name is passed (which is part of the actions ts file). The second paramater handles the state transition. 
 
 ## Selector
-- Book Selector
+### Book Selector
+The `createFeatureSelector` is a method for returning a top level feature state. It returns a typed selector function for a feature slice of state.</br>
+The `createSelector` function can be used to select some data from the state based on several slices of the same state.
+More info see: [Selectors](https://ngrx.io/guide/store/selectors)
 
 ## Services
 ### Books Service
 The book service is used to fetch data from a real API, the google books api.
 
 ## Components
-- BookList Component
-- BookCollection Component
+### BookList Component
+The BookList a component which displays the books which were retrieved from the book service. Also provides functionality to add books to the collection. 
+
+### BookCollection Component
+The BookCollection is a component which displays the books, which were added to the collection by the BookList component. Also provides functionality to remove books from the collection. 
+
+### App Component
+
 
 # Glossary
 ## Action Group
 An action group is used to group various actions with the same source.
+
+## Store and State
+The store is the place where the current state of the application is held/stored.
