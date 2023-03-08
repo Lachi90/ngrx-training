@@ -12,10 +12,14 @@ https://www.angulararchitects.io/aktuelles/reaktives-state-management-mit-ngrx-r
 https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
 
 # Run
-## First time use
+## Live Demo
+https://stackblitz.com/github/Lachi90/ngrx-training/tree/main/ngrx-training
+
+## Locally
+### First time use
 `npm install`
 
-## Run application
+### Run application
 `ng serve`
 
 # Know How
