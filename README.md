@@ -59,7 +59,8 @@ Every other parameter are action handlers, they are represented by the `on` func
 - Book Selector
 
 ## Services
-- Books Service
+### Books Service
+The book service is used to fetch data from a real API, the google books api.
 
 ## Components
 - BookList Component
