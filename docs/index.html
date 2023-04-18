@@ -68,21 +68,20 @@
         </div>
         <div class="row mb-5">
             <h2>Create books service</h2>
-            <div class="border border-success rounded mb-1">
+            <div class="border border-success rounded pb-3">
                 <p>Create the <code>books.service.ts</code> file in the <code>services</code> folder.</p>
                 <p>Add the following content:</p>
-                <div class="accordion" id="bookServiceAccordion">
-                    <div class="card">
-                        <div class="card-header" id="headingBookService">
-                            <button class="btn btn-link" type="button" data-toggle="collapse"
-                                data-target="#bookServiceCode" aria-expanded="true" aria-controls="bookServiceCode">
-                                book.service.ts
-                            </button>
-                        </div>
-                        <div id="bookServiceCode" class="collapse show" aria-labelledby="headingBookService"
-                            data-parent="#bookServiceAccordion">
-                            <div class="card-body">
-                                <pre>
+                <div class="card">
+                    <div class="card-header" id="headingBookService">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#bookServiceCode"
+                            aria-expanded="true" aria-controls="bookServiceCode">
+                            book.service.ts
+                        </button>
+                    </div>
+                    <div id="bookServiceCode" class="collapse show" aria-labelledby="headingBookService"
+                        data-parent="#bookServiceAccordion">
+                        <div class="card-body">
+                            <pre>
                                     <code>
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -105,39 +104,38 @@ export class GoogleBooksService {
 }
                                     </code>
                                 </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mt-3">
                 <h2>Create book collection component</h2>
-                <div class="border border-success rounded mb-1">
+                <div class="border border-success rounded pb-3">
                     <p>Create the <code>book-collection.component.html</code> and
                         <code>book-collection.component.ts</code>
                         in the <code>book-collection</code> folder.
                     </p>
                     <p>Add the following content to the <code>book-collection.component.html</code>:</p>
-                    <div class="accordion" id="bookcollectioncomponentaccordion">
-                        <div class="card">
-                            <div class="card-header" id="headingcollectioncomponent">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#bookcollectioncomponentcode" aria-expanded="true" aria-controls="bookcollectioncomponentcode">
-                                    book-collection.component.html
-                                </button>
-                            </div>
-                            <div id="bookcollectioncomponentcode" class="collapse show" aria-labelledby="headingcollectioncomponent"
-                                data-parent="#bookcollectioncomponentaccordion">
-                                <div class="card-body">
-                                    <pre>
-                                        <code>
+                    <div class="card">
+                        <div class="card-header" id="headingcollectioncomponent">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#bookcollectioncomponentcode" aria-expanded="true"
+                                aria-controls="bookcollectioncomponentcode">
+                                book-collection.component.html
+                            </button>
+                        </div>
+                        <div id="bookcollectioncomponentcode" class="collapse show"
+                            aria-labelledby="headingcollectioncomponent"
+                            data-parent="#bookcollectioncomponentaccordion">
+                            <div class="card-body">
+                                <pre>
+                                    <code>
 &lt;div class="book-item" *ngFor="let book of books"&gt;
     &lt;p&gt;{{book.volumeInfo.title}}&lt;/p&gt;&lt;span&gt; by {{book.volumeInfo.authors}}&lt;/span&gt;&lt;br&gt;
     &lt;button (click)="remove.emit(book.id)" data-test="remove-button"&gt;Remove from Collection&lt;/button&gt;
 &lt;/div&gt;
-                                        </code>
-                                    </pre>
-                                </div>
+                                    </code>
+                                </pre>
                             </div>
                         </div>
                     </div>
