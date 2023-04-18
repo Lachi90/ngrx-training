@@ -66,7 +66,7 @@
                 </pre>
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row mb-3">
             <h2>Create books service</h2>
             <div class="border border-success rounded pb-3">
                 <p>Create the <code>books.service.ts</code> file in the <code>services</code> folder.</p>
@@ -105,64 +105,120 @@ export class GoogleBooksService {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-3">
-                <h2>Create book collection component</h2>
-                <div class="border border-success rounded pb-3">
-                    <p>Create the <code>book-collection.component.html</code> and
-                        <code>book-collection.component.ts</code>
-                        in the <code>book-collection</code> folder.
-                    </p>
-                    <p>Add the following content to the <code>book-collection.component.html</code>:</p>
-                    <div class="card">
-                        <div class="card-header">
-                            <button class="btn btn-link" type="button">
-                                book-collection.component.html
-                            </button>
-                        </div>
-                        <div>
-                            <div class="card-body">
-                                <pre>
-                                    <code>
+            </div>          
+        </div>
+        <div class="row mb-3">
+            <h2>Create book collection component</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Create the <code>book-collection.component.html</code> and
+                    <code>book-collection.component.ts</code>
+                    in the <code>book-collection</code> folder.
+                </p>
+                <p>Add the following content to the <code>book-collection.component.html</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            book-collection.component.html
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
 &lt;div class="book-item" *ngFor="let book of books"&gt;
-    &lt;p&gt;{{book.volumeInfo.title}}&lt;/p&gt;&lt;span&gt; by {{book.volumeInfo.authors}}&lt;/span&gt;&lt;br&gt;
-    &lt;button (click)="remove.emit(book.id)" data-test="remove-button"&gt;Remove from Collection&lt;/button&gt;
+&lt;p&gt;{{book.volumeInfo.title}}&lt;/p&gt;&lt;span&gt; by {{book.volumeInfo.authors}}&lt;/span&gt;&lt;br&gt;
+&lt;button (click)="remove.emit(book.id)" data-test="remove-button"&gt;Remove from Collection&lt;/button&gt;
 &lt;/div&gt;
-                                    </code>
-                                </pre>
-                            </div>
+                                </code>
+                            </pre>
                         </div>
                     </div>
-                    <p>Add the following content to the <code>book-collection.component.ts</code>:</p>
-                    <div class="card">
-                        <div class="card-header">
-                            <button class="btn btn-link" type="button">
-                                book-collection.component.ts
-                            </button>
-                        </div>
-                        <div>
-                            <div class="card-body">
-                                <pre>
-                                    <code>
+                </div>
+                <p>Add the following content to the <code>book-collection.component.ts</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            book-collection.component.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../../store/models/books.model';
-    
+
 @Component({
-    selector: 'app-book-collection',
-    templateUrl: './book-collection.component.html'
+selector: 'app-book-collection',
+templateUrl: './book-collection.component.html'
 })
 export class BookCollectionComponent {
-    @Input() books: ReadonlyArray&lt;Book&gt; = [];
-    @Output() remove = new EventEmitter&lt;string&gt;();
+@Input() books: ReadonlyArray&lt;Book&gt; = [];
+@Output() remove = new EventEmitter&lt;string&gt;();
 }
-                                    </code>
-                                </pre>
-                            </div>
+                                </code>
+                            </pre>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row mt-3">
+            <h2>Create book list component</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Create the <code>book-list.component.html</code> and
+                    <code>book-list.component.ts</code>
+                    in the <code>book-list</code> folder.
+                </p>
+                <p>Add the following content to the <code>book-list.component.html</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            book-list.component.html
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+&lt;div class=&quot;book-item&quot; *ngFor=&quot;let book of books&quot;&gt;
+&lt;p&gt;{{book.volumeInfo.title}}&lt;/p&gt;&lt;span&gt; by {{book.volumeInfo.authors}}&lt;/span&gt;&lt;br&gt;
+&lt;button (click)=&quot;add.emit(book.id)&quot; data-test=&quot;add-button&quot;&gt;Add to Collection&lt;/button&gt;
+&lt;/div&gt;                                      
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <p>Add the following content to the <code>book-list.component.ts</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            book-list.component.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Book } from '../../store/models/books.model';
+
+@Component({
+selector: 'app-book-list',
+templateUrl: './book-list.component.html'
+})
+export class BookListComponent {
+@Input() books: ReadonlyArray&lt;Book&gt; = [];
+@Output() add = new EventEmitter&lt;string&gt;();
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
 </body>
 
 </html>
