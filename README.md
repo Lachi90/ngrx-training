@@ -63,7 +63,7 @@ More info see: [Actions](https://ngrx.io/guide/store/actions)
 
 ### Reducers explained
 The two reducers work by the same principle. The `createReducer` function retrieves the initial [state](#store-and-state) as there first parameter. 
-Every other parameter are action handlers, they are represented by the `on` function. As first paramter the action name is passed (which is part of the actions ts file). The second paramater handles the state transition. 
+Every other parameter are action handlers, they are represented by the `on` function. As first parameter the action name is passed (which is part of the actions ts file). The second parameter handles the state transition. 
 More info see: [Reducers](https://ngrx.io/guide/store/reducers)
 
 ## Selector
@@ -74,7 +74,7 @@ More info see: [Selectors](https://ngrx.io/guide/store/selectors)
 
 ## Services
 ### Books Service
-The book service is used to fetch data from a real API, the google books api.
+The book service is used to fetch data from a real API, the google books API.
 
 ## Components
 ### BookList Component
