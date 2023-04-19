@@ -530,7 +530,60 @@ export class AppComponent {
                     Also defined are the event handlers for the buttons. Which itself trigger actions, which then are getting handled by reducers to modify the state.
                 </p>
             </div>
-        </div>          
+        </div> 
+        <div class="row mb-3">
+            <h2>Bringing everything together in the app module</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Replace the content of <code>app.module.ts</code> with the following:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            app.module.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+
+import { HttpClientModule } from '@angular/common/http';
+import { booksReducer } from './store/reducers/books.reducer';
+import { collectionReducer } from './store/reducers/collection.reducer';
+import { BookCollectionComponent } from './components/book-collection/book-collection.component';
+import { BookListComponent } from './components/book-list/book-list.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    BookCollectionComponent,
+    BookListComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot({
+      books: booksReducer,
+      collection: collectionReducer
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                   
     </div>
 </body>
 
