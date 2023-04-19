@@ -308,13 +308,13 @@ export const BooksApiActions = createActionGroup({
                 <p class="mt-3"><b>Explanation:</b></p>
                 <p>We have defined two <code>ActionGroups</code>: <i>BooksActions</i> and <i>BooksApiAction</i></p>
                 <p>
-                    The <code>BooksActions</code> contains the <code>Add Book</code> event which gets triggered, when the sser presses the <code>Add to collection</code> button.<br>
-                    The second event is the <code>Remove Book</code> event, it gets triggerd when the user presses the <code>Remove from collection</code> button.
+                    The <code>BooksActions</code> contains the <code>Add Book</code> event which gets triggered, when the user presses the <code>Add to collection</code> button.<br>
+                    The second event is the <code>Remove Book</code> event, it gets triggered when the user presses the <code>Remove from collection</code> button.
                 </p>
                 <p>
                     <code>BooksApicAction</code> contains only one event. This is emitted when the application receives the data from the book api. 
                 </p>
-                <p>So you can say, that actions are events which are triggered throughout the appliction. This could be user interactions or network requests.</p>
+                <p>So you can say, that actions are events which are triggered throughout the application. This could be user interactions or network requests.</p>
             </div>
         </div>
         <div class="row mb-3">
@@ -350,7 +350,7 @@ export const booksReducer = createReducer(
                     </div>
                 </div>
                 <p class="mt-3"><b>Explanation:</b></p>
-                <p>The <code>books reducer</code> is reponsible for changing the state regarding the books received from the books api, which is called by the <code>GoogleBooksService</code>.</p>
+                <p>The <code>books reducer</code> is responsible for changing the state regarding the books received from the books API, which is called by the <code>GoogleBooksService</code>.</p>
             </div>
         </div>
         <div class="row mb-3">
@@ -393,7 +393,7 @@ export const collectionReducer = createReducer(
                 <p class="mt-3"><b>Explanation:</b></p>
                 <p>
                     The <code>collection reducer</code> has more work to do than the books reducer, because the it has more actions to handle. As mentioned, the two buttons
-                    for adding and removing books from the collection are reponsible for triggering the actions, which then are calling the reducer for the actual state change.
+                    for adding and removing books from the collection are responsible for triggering the actions, which then are calling the reducer for the actual state change.
                 </p>
                 <p><b>Remember: Only reducers are allowed to change the state!</b></p>
             </div>
@@ -441,7 +441,7 @@ export const selectBookCollection = createSelector(
                 <p>
                     There are two selectors, one for each piece of the state.<br>
                     The <code>selectBooks</code> selector is for getting the books provided by the <code>GoogleBooksService</code> 
-                    and the <code>selectCollectionState</code> is for geteting the books which were added to the books collection by the user.
+                    and the <code>selectCollectionState</code> is for getting the books which were added to the books collection by the user.
                 </p>
                 <p>
                     Then there is a third one, the <code>selectBookCollection</code> selector, which combines the other two selectors.
@@ -477,7 +477,7 @@ export const selectBookCollection = createSelector(
                 <p>
                     The previous created components get used for having the avaiable books and the books added to collection present in the app component.<br>
                     Explanation for <code>books</code> and <code>bookCollection</code> bindings will be clear when there is life in the app component (app.component.ts).<br>
-                    But still to mention, there are events binded to the buttons for adding and removing books from the personal collection.
+                    But still to mention, there are events bound to the buttons for adding and removing books from the personal collection.
                 </p>
             </div>
         </div>
