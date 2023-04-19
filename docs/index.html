@@ -379,7 +379,57 @@ export const collectionReducer = createReducer(
                 </p>
                 <p><b>Remember: Only reducers are allowed to change the state!</b></p>
             </div>
-        </div>                 
+        </div>
+        <div class="row mb-3">
+            <h2>Create books selector</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Create the <code>books.selector.ts</code> in the <code>selector</code> folder.
+                </p>
+                <p>Add the following content to the <code>books.selector.ts</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            books.selector.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { Book } from '../models/books.model';
+    
+export const selectBooks = createFeatureSelector&lt;ReadonlyArray&lt;Book&gt;&gt;('books');
+    
+export const selectCollectionState = createFeatureSelector&lt;ReadonlyArray&lt;string&gt;&gt;('collection');
+    
+export const selectBookCollection = createSelector(
+    selectBooks,
+    selectCollectionState,
+    (books, collection) =&gt; {
+        return collection.map((id) =&gt; books.find((book) =&gt; book.id === id)!);
+    }
+);
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3"><b>Explanation:</b></p>
+                <p>
+                    With the help of reducers the state gets modified, but how about pulling data from the state?<br>
+                    That is what selectors are for. Selectors are functions which pull data from the state.
+                </p>
+                <p>
+                    There are two selectors, one for each piece of the state.<br>
+                    The <code>selectBooks</code> selector is for getting the books provided by the <code>GoogleBooksService</code> 
+                    and the <code>selectCollectionState</code> is for geteting the books which were added to the books collection by the user.
+                </p>
+                <p>
+                    Then there is a third one, the <code>selectBookCollection</code> selector, which combines the other two selectors.
+                </p>
+            </div>
+        </div>                         
     </div>
 </body>
 
