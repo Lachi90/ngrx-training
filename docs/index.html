@@ -220,6 +220,36 @@ export class BookListComponent {
             </div>
         </div>
         <div class="row mb-3">
+            <h2>Create books model</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Create the <code>books.model.ts</code> in the <code>models</code> folder.
+                </p>
+                <p>Add the following content to the <code>books.model.ts</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            book-actions.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+export interface Book {
+    id: string;
+    volumeInfo: {
+        title: string;
+        authors: Array&lt;string&gt;;
+    };
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>          
+        <div class="row mb-3">
             <h2>Create books action</h2>
             <div class="border border-success rounded pb-3">
                 <p>Create the <code>book-actions.ts</code> in the <code>actions</code> folder.
@@ -263,9 +293,13 @@ export const BooksApiActions = createActionGroup({
                     The <code>BooksActions</code> contains the <code>Add Book</code> event which gets triggered, when the sser presses the <code>Add to collection</code> button.<br>
                     The second event is the <code>Remove Book</code> event, it gets triggerd when the user presses the <code>Remove from colleciton</code> button.
                 </p>
+                <p>
+                    <code>BooksApicAction</code> contains only one event. This is emitted when the application receives the data from the book api. 
+                </p>
                 <p>So you can say, that actions are events which are triggered throughout the appliction. This could be user interactions or network requests.</p>
             </div>
-        </div>    
+        </div>
+    </div>
 </body>
 
 </html>
