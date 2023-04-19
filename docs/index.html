@@ -462,7 +462,75 @@ export const selectBookCollection = createSelector(
                     But still to mention, there are events binded to the buttons for adding and removing books from the personal collection.
                 </p>
             </div>
-        </div> 
+        </div>
+        <div class="row mb-3">
+            <h2>Bringing the app component to life</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Replace the content of <code>app.component.ts</code> with the following:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            app.component.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { GoogleBooksService } from './services/books.service';
+import { BooksActions, BooksApiActions } from './store/actions/books.actions';
+import { selectBookCollection, selectBooks } from './store/selectors/books.selectors';
+
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+    title = 'ngrx-training';
+    
+    books$ = this.store.select(selectBooks);
+    bookCollection$ = this.store.select(selectBookCollection);
+    
+    onAdd(bookId: string) {
+        this.store.dispatch(BooksActions.addBook({ bookId }));
+    }
+    
+    onRemove(bookId: string) {
+        this.store.dispatch(BooksActions.removeBook({ bookId }));
+    }
+    
+    constructor(private booksService: GoogleBooksService, private store: Store) {}
+
+    ngOnInit() {
+        this.booksService
+            .getBooks()
+            .subscribe((books) =&gt;
+                this.store.dispatch(BooksApiActions.retrievedBookList({ books }))
+            );
+    }
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3"><b>Explanation:</b></p>
+                <p>
+                    In the <code>ngOnInit()</code> method the <code>book service</code> is called to get the books from the google api. 
+                    The retrieved books are getting dispatched to the respective reducer via triggering the corresponding action.
+                </p>
+                <p>
+                    For having the books and selected books collection available for the html part, there are <code>books$</code> and <code>bookCollection$</code> which are bound to the components.<br>
+                    The content of the variables gets delivered by their respective selctors.
+                </p>
+                <p>
+                    Also defined are the event handlers for the buttons. Which itself trigger actions, which then are getting handled by reducers to modify the state.
+                </p>
+            </div>
+        </div>          
     </div>
 </body>
 
