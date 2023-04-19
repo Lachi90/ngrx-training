@@ -218,7 +218,54 @@ export class BookListComponent {
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
+        <div class="row mb-3">
+            <h2>Create books action</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Create the <code>book-actions.ts</code> in the <code>actions</code> folder.
+                </p>
+                <p>Add the following content to the <code>book-actions.ts</code>:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            book-actions.ts
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+import { createActionGroup, props } from '@ngrx/store';
+import { Book } from '../models/books.model';
+    
+export const BooksActions = createActionGroup({
+    source: 'Books',
+    events: {
+    'Add Book': props&lt;{ bookId: string }&gt;(),
+    'Remove Book': props&lt;{ bookId: string }&gt;(),
+    },
+});
+    
+export const BooksApiActions = createActionGroup({
+    source: 'Books API',
+    events: {
+    'Retrieved Book List': props&lt;{ books: ReadonlyArray&lt;Book&gt; }&gt;(),
+    },
+});
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3"><b>Explanation:</b></p>
+                <p>We have defined two <code>ActionGroups</code>: <i>BooksActions</i> and <i>BooksApiAction</i></p>
+                <p>
+                    The <code>BooksActions</code> contains the <code>Add Book</code> event which gets triggered, when the sser presses the <code>Add to collection</code> button.<br>
+                    The second event is the <code>Remove Book</code> event, it gets triggerd when the user presses the <code>Remove from colleciton</code> button.
+                </p>
+                <p>So you can say, that actions are events which are triggered throughout the appliction. This could be user interactions or network requests.</p>
+            </div>
+        </div>    
 </body>
 
 </html>
