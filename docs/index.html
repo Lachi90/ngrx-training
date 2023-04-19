@@ -429,7 +429,40 @@ export const selectBookCollection = createSelector(
                     Then there is a third one, the <code>selectBookCollection</code> selector, which combines the other two selectors.
                 </p>
             </div>
-        </div>                         
+        </div>
+        <div class="row mb-3">
+            <h2>Adjusting the app component</h2>
+            <div class="border border-success rounded pb-3">
+                <p>Replace the content of <code>app.component.html</code> with the following:</p>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link" type="button">
+                            app.component.html
+                        </button>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <pre>
+                                <code>
+&lt;h2&gt;Books&lt;/h2&gt;
+&lt;app-book-list class=&quot;book-list&quot; [books]=&quot;(books$ | async)!&quot; (add)=&quot;onAdd($event)&quot;&gt;&lt;/app-book-list&gt;
+
+&lt;h2&gt;My Collection&lt;/h2&gt;
+&lt;app-book-collection class=&quot;book-collection&quot; [books]=&quot;(bookCollection$ | async)!&quot; (remove)=&quot;onRemove($event)&quot;&gt;
+&lt;/app-book-collection&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3"><b>Explanation:</b></p>
+                <p>
+                    The previous created components get used for having the avaiable books and the books added to collection present in the app component.<br>
+                    Explanation for <code>books</code> and <code>bookCollection</code> bindings will be clear when there is life in the app component (app.component.ts).<br>
+                    But still to mention, there are events binded to the buttons for adding and removing books from the personal collection.
+                </p>
+            </div>
+        </div> 
     </div>
 </body>
 
