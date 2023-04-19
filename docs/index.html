@@ -16,7 +16,7 @@
         </div>
         <div class="row mb-3">
             <h2>General information</h2>
-            <div class="border border-success rounded mb-1">
+            <div class="border border-success rounded mb-1 pt-3">
                 <p>This tutorial belongs to a Github repository which contains this project entirely.</p>
                 <p>You can find the repository here: <a href="https://github.com/Lachi90/ngrx-training" target="_blank">https://github.com/Lachi90/ngrx-training</a></p>
                 <p>
@@ -27,7 +27,7 @@
         </div>        
         <div class="row mb-3">
             <h2>Setup project</h2>
-            <div class="border border-success rounded mb-1">
+            <div class="border border-success rounded mb-1 pt-3">
                 <p><b>To create a new Angular project, run the following command:</b></p>
                 <kbd>ng new ngrx-training</kbd>
                 <p class="mt-3"><b>Answer the presented questions as follows: </b></p>
@@ -37,14 +37,14 @@
         </div>
         <div class="row mb-3">
             <h2>Add ngrx to the project</h2>
-            <div class="border border-success rounded mb-1 pb-3">
+            <div class="border border-success rounded mb-1 pb-3 pt-3">
                 <p>To add the ngrx package to the project run:</p>
                 <kbd>ng add @ngrx/store@latest</kbd>
             </div>
         </div>        
         <div class="row mb-3">
             <h2>Create folder structure</h2>
-            <div class="border border-success rounded mb-1">
+            <div class="border border-success rounded mb-1 pt-3">
                 <ul>
                     <li>
                         <p>Create a folder called <code>store</code> in <code>src/app/</code></p>
@@ -86,7 +86,7 @@
         </div>
         <div class="row mb-3">
             <h2>Create books service</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>books.service.ts</code> file in the <code>services</code> folder.</p>
                 <p>Add the following content:</p>
                 <div class="card">
@@ -127,7 +127,7 @@ export class GoogleBooksService {
         </div>
         <div class="row mb-3">
             <h2>Create book collection component</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>book-collection.component.html</code> and
                     <code>book-collection.component.ts</code>
                     in the <code>book-collection</code> folder.
@@ -183,7 +183,7 @@ export class BookCollectionComponent {
         </div>
         <div class="row mb-3">
             <h2>Create book list component</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>book-list.component.html</code> and
                     <code>book-list.component.ts</code>
                     in the <code>book-list</code> folder.
@@ -239,7 +239,7 @@ export class BookListComponent {
         </div>
         <div class="row mb-3">
             <h2>Create books model</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>books.model.ts</code> in the <code>models</code> folder.
                 </p>
                 <p>Add the following content to the <code>books.model.ts</code>:</p>
@@ -269,7 +269,7 @@ export interface Book {
         </div>          
         <div class="row mb-3">
             <h2>Create books action</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>book-actions.ts</code> in the <code>actions</code> folder.
                 </p>
                 <p>Add the following content to the <code>book-actions.ts</code>:</p>
@@ -319,7 +319,7 @@ export const BooksApiActions = createActionGroup({
         </div>
         <div class="row mb-3">
             <h2>Create books reducer</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>books.reducer.ts</code> in the <code>reducer</code> folder.
                 </p>
                 <p>Add the following content to the <code>books.reducer.ts</code>:</p>
@@ -355,7 +355,7 @@ export const booksReducer = createReducer(
         </div>
         <div class="row mb-3">
             <h2>Create collection reducer</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>collection.reducer.ts</code> in the <code>reducer</code> folder.
                 </p>
                 <p>Add the following content to the <code>collection.reducer.ts</code>:</p>
@@ -400,7 +400,7 @@ export const collectionReducer = createReducer(
         </div>
         <div class="row mb-3">
             <h2>Create books selector</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Create the <code>books.selector.ts</code> in the <code>selector</code> folder.
                 </p>
                 <p>Add the following content to the <code>books.selector.ts</code>:</p>
@@ -450,7 +450,7 @@ export const selectBookCollection = createSelector(
         </div>
         <div class="row mb-3">
             <h2>Adjusting the app component</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Replace the content of <code>app.component.html</code> with the following:</p>
                 <div class="card">
                     <div class="card-header">
@@ -483,7 +483,7 @@ export const selectBookCollection = createSelector(
         </div>
         <div class="row mb-3">
             <h2>Bringing the app component to life</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Replace the content of <code>app.component.ts</code> with the following:</p>
                 <div class="card">
                     <div class="card-header">
@@ -551,7 +551,7 @@ export class AppComponent {
         </div> 
         <div class="row mb-3">
             <h2>Bringing everything together in the app module</h2>
-            <div class="border border-success rounded pb-3">
+            <div class="border border-success rounded pb-3 pt-3">
                 <p>Replace the content of <code>app.module.ts</code> with the following:</p>
                 <div class="card">
                     <div class="card-header">
